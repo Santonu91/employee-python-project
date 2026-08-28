@@ -56,3 +56,17 @@ jobs:
       - name: Build frontend
         working-directory: frontend
         run: npm run build
+
+  docker-build:
+    name: Docker Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Backend Image
+        run: docker build -t employee-backend ./backend
+
+      - name: Build Frontend Image
+        run: docker build -t employee-frontend ./frontend        
