@@ -103,7 +103,7 @@ jobs:
         run: |
           docker push ghcr.io/santonu91/employee-frontend:latest        
 
-    trivy-scan:
+  trivy-scan:
     name: Trivy Security Scan
     runs-on: ubuntu-latest
     needs: docker-build
@@ -140,10 +140,11 @@ jobs:
           vuln-type: os,library
           exit-code: 0
 
-      - name: Upload Trivy Reports
+      - name: Upload Trivy reports
         uses: actions/upload-artifact@v4
         with:
           name: trivy-security-reports
           path: |
             backend-trivy-report.txt
-            frontend-trivy-report.txt  
+            frontend-trivy-report.txt
+          if-no-files-found: error
