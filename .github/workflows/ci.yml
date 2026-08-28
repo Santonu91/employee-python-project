@@ -89,16 +89,16 @@ jobs:
 
       - name: Build Backend
         run: |
-          docker build -t ghcr.io/${{ santonu91 }}/employee-backend:latest ./backend
+          docker build -t ghcr.io/santonu91/employee-backend:latest ./backend
 
       - name: Push Backend
         run: |
-          docker push ghcr.io/${{ santonu91 }}/employee-backend:latest
+          docker push ghcr.io/santonu91/employee-backend:latest
 
       - name: Build Frontend
         run: |
-          docker build -t ghcr.io/${{ santonu91 }}/employee-frontend:latest ./frontend
+          docker build -t ghcr.io/santonu91/employee-frontend:latest ./frontend
 
       - name: Push Frontend
         run: |
-          docker push ghcr.io/${{ santonu91 }}/employee-frontend:latest        
+          docker push ghcr.io/santonu91/employee-frontend:latest        
