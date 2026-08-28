@@ -146,4 +146,4 @@ jobs:
           name: trivy-security-reports
           path: |
             backend-trivy-report.txt
-            frontend-trivy-report.txt
+            frontend-trivy-report.txt  
