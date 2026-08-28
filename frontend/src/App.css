@@ -117,4 +117,10 @@ li {
   border-radius: 8px;
 }
 
-.employee-details 
+.employee-details {
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
