@@ -6,6 +6,7 @@ from database import SessionLocal, engine
 from models import Base, Employee
 from schemas import EmployeeCreate, EmployeeResponse
 
+from prometheus_fastapi_instrumentator import Instrumentator
 
 # Create database tables if they do not already exist
 Base.metadata.create_all(bind=engine)
@@ -169,3 +170,5 @@ def delete_employee(
     db.commit()
 
     return {"message": "Employee deleted successfully"}
+
+Instrumentator().instrument(app).expose(app)
